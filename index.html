@@ -1,1 +1,225 @@
-Hello World
+<meta charset="latin">
+<html>
+<head>
+<script>
+
+// 4 1 2 3
+var N = 3;
+var Ndirs = 3;
+var conjunto = [1, 2, 3, 4];
+var resultados = [ [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4] ];
+var posicion = 0;
+var ciclospreg = 0;
+
+
+
+
+var directorio = ["NY", "CASA", "CONOS"];
+var posDir =0;
+
+
+
+
+
+function iLike(WHICH){
+
+	pp=document.getElementById("estado");
+	ppPos=document.getElementById("estado_pos");
+	ppCic=document.getElementById("estado_ciclos");
+	ppTit=document.getElementById("tituloimg");
+	
+	imageL=document.getElementById("PicL");
+	imageR=document.getElementById("PicR");
+        imageH=document.getElementById("PicHAZY");
+
+        imageH.src = directorio[posDir] + "/" + "0.jpg";
+	var tmp=0;
+	if(WHICH == 1){
+		//alert('LIKE LEFT');
+
+		tmp = conjunto[posicion];
+		conjunto[posicion] = conjunto[posicion+1];
+
+		conjunto[posicion+1] = tmp;
+
+		
+		//pp.innerHTML = conjunto;
+
+
+		posicion = posicion + 1;
+
+		if(posicion == N){
+			posicion = 0;
+			ciclospreg = ciclospreg + 1;
+			if(ciclospreg == N){
+				//alert('FIN');
+				for(var j=0; j<=N; j++){
+					resultados[posDir][j] = conjunto[j];
+				}
+				posDir = posDir + 1;
+				ciclospreg = 0;
+                                imageH.src = directorio[posDir] + "/" + "0.jpg";
+				if(posDir == Ndirs){
+					alert('FIN');
+
+					PRINTIT(1);
+
+				}
+			}
+		}
+		//ppPos.innerHTML = posicion;
+		imageL.src = directorio[posDir] + "/" + conjunto[posicion] + ".jpg";
+
+		imageR.src = directorio[posDir] + "/" + conjunto[posicion + 1]  + ".jpg";
+                imageH.src = directorio[posDir] + "/0.jpg";
+
+
+		//ppCic.innerHTML = ciclospreg;
+		ppTit.innerHTML = directorio[posDir];
+
+	}
+	if(WHICH == 2){
+		//alert('LIKE RIGHT');
+
+		posicion = posicion + 1;
+
+
+		//pp.innerHTML = conjunto;
+
+		if(posicion == N){
+			posicion = 0;
+			ciclospreg = ciclospreg + 1;
+			if(ciclospreg == N){
+				//alert('FIN');
+				//resultados[posDir] = conjunto;
+
+
+				for(var j=0; j<=N; j++){
+					resultados[posDir][j] = conjunto[j];
+				}		
+
+				posDir = posDir + 1;
+				ciclospreg = 0;		
+                                imageH.src = directorio[posDir] + "/" + "0.jpg";
+				if(posDir == Ndirs){
+					//alert('FIN');
+
+					PRINTIT(1);					
+                                         
+				}
+
+			}
+		}
+
+
+
+		imageL.src = directorio[posDir] + "/" +conjunto[posicion] + ".jpg";
+
+		imageR.src = directorio[posDir] + "/" +conjunto[posicion + 1]  + ".jpg";	
+ 
+
+                imageH.src = directorio[posDir] + "/0.jpg";
+
+		//ppPos.innerHTML = posicion;
+		//ppCic.innerHTML = ciclospreg;
+
+		//ppCic.innerHTML = resultados;
+		ppTit.innerHTML = directorio[posDir];
+	}
+
+
+	function PRINTIT(WHICH){
+		var texto="  ";
+		WHICH = WHICH + 1;
+		for(var i=0; i<4; i++){
+			for(var j=0; j<4; j++){
+				texto = texto + " " + resultados[i][j];
+			}
+			texto = texto + " " + "-";
+		}
+
+		alert(texto);
+              document.cookie = "finalizado=0; ";
+                document.cookie = "resChokis=" + texto + "; ";
+               window.location.href = "fin.html";
+
+	}
+
+
+
+
+function loadImages(){
+  preload( "NY/1.jpg","NY/2.jpg","NY/3.jpg","NY/4.jpg",   
+           "CASA/0.jpg","CASA/1.jpg","CASA/2.jpg","CASA/3.jpg","CASA/4.jpg",
+           "CONOS/0.jpg","CONOS/1.jpg","CONOS/2.jpg","CONOS/3.jpg","CONOS/4.jpg");
+
+
+}
+
+
+
+}
+
+
+
+</script>
+
+</head>
+
+<body bgcolor="black" onLoad="loadImages()">
+
+
+
+
+
+<font color="white">
+
+
+
+
+
+<center>
+
+<h3>  La siguiente imagen con neblina fue procesada con diversos algoritmos para remover los efectos de degradación. </h3>
+
+<img src="NY/0.jpg" id="PicHAZY" HEIGHT="300">
+
+
+<h3> ¿Cuál de las siguientes imágenes procesadas consideras se le removió mejor la neblina y al mismo tiempo recupera sus colores más naturales? </h3>
+
+<h4> <italics> Nota: Si aparecen las mismas imágenes se debe esperar al navegador que cargue la siguiente. </italics> </h4>
+
+<table>
+	<tr> <p id="tituloimg"> NY </p> </tr>
+<tr>    <td>   <img src="NY/1.jpg" id="PicL" HEIGHT="300"> <br> <center> <button type="button" onclick="iLike(1)">Elegir esta imagen</button>   </center> </td>
+
+        <td>   <img src="NY/2.jpg" id="PicR" HEIGHT="300"> <br> <center> <button type="button" onclick="iLike(2)">Elegir esta imagen</button> </center>  </td>
+</tr>
+</table>
+
+<p id="estado"> </p>
+<p id="estado_pos"> </p>
+<p id="estado_ciclos"> </p>
+</center>
+
+</font>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+
+
+</body>
+
+</html>
+
+
