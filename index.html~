@@ -68,7 +68,18 @@ function iLike(WHICH){
 				}
 			}
 		}
-		//ppPos.innerHTML = posicion;
+	
+		
+		
+	 if(letsgo == 1){
+	 	alert('FIN!!!');
+		  imageL.src="CASA/0.jpg";
+	       imageR.src="NY/0.jpg";
+          imageH.src="CONOS/0.jpg";
+          ppTit.innerHTML = "GRACIAS";
+		} else{
+		
+			//ppPos.innerHTML = posicion;
 		imageL.src = directorio[posDir] + "/" + conjunto[posicion] + ".jpg";
 
 		imageR.src = directorio[posDir] + "/" + conjunto[posicion + 1]  + ".jpg";
@@ -78,12 +89,6 @@ function iLike(WHICH){
 		//ppCic.innerHTML = ciclospreg;
 		ppTit.innerHTML = directorio[posDir];
 		
-		
-	 if(letsgo == 1){
-		  imageL.src="CASA/0.JPG";
-	       imageR.src="NY/0.JPG";
-          imageH.src="CONOS/0.JPG";
-          ppTit.innerHTML = "GRACIAS";
 		}
 
 	}
@@ -122,7 +127,18 @@ function iLike(WHICH){
 
 
 
-		imageL.src = directorio[posDir] + "/" +conjunto[posicion] + ".jpg";
+	
+		
+		
+		if(letsgo == 1){
+		alert('FIN!!!');
+		  imageL.src="CASA/0.jpg";
+	       imageR.src="NY/0.jpg";
+          imageH.src="CONOS/0.jpg";
+          ppTit.innerHTML = "GRACIAS";
+		} else {
+		
+			imageL.src = directorio[posDir] + "/" +conjunto[posicion] + ".jpg";
 
 		imageR.src = directorio[posDir] + "/" +conjunto[posicion + 1]  + ".jpg";	
  
@@ -135,12 +151,6 @@ function iLike(WHICH){
 		//ppCic.innerHTML = resultados;
 		ppTit.innerHTML = directorio[posDir];
 		
-		
-		if(letsgo == 1){
-		  imageL.src="CASA/0.JPG";
-	       imageR.src="NY/0.JPG";
-          imageH.src="CONOS/0.JPG";
-          ppTit.innerHTML = "GRACIAS";
 		}
 		
 	}
@@ -169,9 +179,9 @@ function iLike(WHICH){
                
              letsgo=1;
                
-               	imageL.src="CASA/0.JPG";
-	            imageR.src="NY/0.JPG";
-          imageH.src="CONOS/0.JPG";
+               	imageL.src="CASA/0.jpg";
+	            imageR.src="NY/0.jpg";
+          imageH.src="CONOS/0.jpg";
                
                
 
