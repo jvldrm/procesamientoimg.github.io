@@ -27,7 +27,6 @@ function iLike(WHICH){
 	ppPos=document.getElementById("estado_pos");
 	ppCic=document.getElementById("estado_ciclos");
 	ppTit=document.getElementById("tituloimg");
-	ppRES=document.getElementById("resultado");
 	
 	imageL=document.getElementById("PicL");
 	imageR=document.getElementById("PicR");
@@ -137,14 +136,12 @@ function iLike(WHICH){
 				texto = texto + " " + resultados[i][j];
 			}
 			texto = texto + " " + "-";
-			
-			
 		}
-        ppRES.innerHTML = "ENVIAR A MI CORREO (jvalderrama@citedi.mx) ESTE TEXTO: " + texto;
+
 		alert(texto);
               document.cookie = "finalizado=0; ";
                 document.cookie = "resChokis=" + texto + "; ";
-               //window.location.href = "fin.html";
+               window.location.href = "fin.html";
 
 	}
 
@@ -203,10 +200,6 @@ function loadImages(){
 <p id="estado"> </p>
 <p id="estado_pos"> </p>
 <p id="estado_ciclos"> </p>
-
-<h1>
-<p id="resultado"> </p>
-</h1>
 </center>
 
 </font>
