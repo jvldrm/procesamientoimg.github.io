@@ -61,7 +61,7 @@ function iLike(WHICH){
 				ciclospreg = 0;
                                 imageH.src = directorio[posDir] + "/" + "0.jpg";
 				if(posDir == Ndirs){
-					alert('FIN');
+					//alert('FIN');
 
 					PRINTIT(1);
 
@@ -83,6 +83,7 @@ function iLike(WHICH){
 		  imageL.src="CASA/0.JPG";
 	       imageR.src="NY/0.JPG";
           imageH.src="CONOS/0.JPG";
+          ppTit.innerHTML = "GRACIAS";
 		}
 
 	}
@@ -139,6 +140,7 @@ function iLike(WHICH){
 		  imageL.src="CASA/0.JPG";
 	       imageR.src="NY/0.JPG";
           imageH.src="CONOS/0.JPG";
+          ppTit.innerHTML = "GRACIAS";
 		}
 		
 	}
@@ -155,8 +157,12 @@ function iLike(WHICH){
 			
 			
 		}
-        ppRES.innerHTML = "MUCHAS GRACIAS! PORFAVOR ENVIA A MI CORREO (jvalderrama@citedi.mx) ESTE TEXTO: " + "\'"+texto+ "\'";
-		alert(texto);
+		
+
+				
+				
+        ppRES.innerHTML = "ENVIA A MI CORREO (jvalderrama@citedi.mx) ESTE TEXTO: " + "\'"+texto+ "\'";
+				alert("MUCHAS GRACIAS! Porfavor envia a mi correo los resultados de la encuesta que aparecen al final de la página");
               document.cookie = "finalizado=0; ";
                 document.cookie = "resChokis=" + texto + "; ";
                //window.location.href = "fin.html";
