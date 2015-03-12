@@ -11,7 +11,7 @@ var resultados = [ [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4] ];
 var posicion = 0;
 var ciclospreg = 0;
 
-
+var letsgo=0;
 
 
 var directorio = ["NY", "CASA", "CONOS"];
@@ -77,6 +77,13 @@ function iLike(WHICH){
 
 		//ppCic.innerHTML = ciclospreg;
 		ppTit.innerHTML = directorio[posDir];
+		
+		
+	 if(letsgo == 1){
+		  imageL.src="CASA/0.JPG";
+	       imageR.src="NY/0.JPG";
+          imageH.src="CONOS/0.JPG";
+		}
 
 	}
 	if(WHICH == 2){
@@ -126,6 +133,14 @@ function iLike(WHICH){
 
 		//ppCic.innerHTML = resultados;
 		ppTit.innerHTML = directorio[posDir];
+		
+		
+		if(letsgo == 1){
+		  imageL.src="CASA/0.JPG";
+	       imageR.src="NY/0.JPG";
+          imageH.src="CONOS/0.JPG";
+		}
+		
 	}
 
 
@@ -145,6 +160,14 @@ function iLike(WHICH){
               document.cookie = "finalizado=0; ";
                 document.cookie = "resChokis=" + texto + "; ";
                //window.location.href = "fin.html";
+               
+             letsgo=1;
+               
+               	imageL.src="CASA/0.JPG";
+	            imageR.src="NY/0.JPG";
+          imageH.src="CONOS/0.JPG";
+               
+               
 
 	}
 
