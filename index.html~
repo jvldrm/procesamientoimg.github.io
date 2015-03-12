@@ -72,7 +72,7 @@ function iLike(WHICH){
 		
 		
 	 if(letsgo == 1){
-	 	alert('FIN!!!');
+
 		  imageL.src="CASA/0.jpg";
 	       imageR.src="NY/0.jpg";
           imageH.src="CONOS/0.jpg";
@@ -131,7 +131,7 @@ function iLike(WHICH){
 		
 		
 		if(letsgo == 1){
-		alert('FIN!!!');
+
 		  imageL.src="CASA/0.jpg";
 	       imageR.src="NY/0.jpg";
           imageH.src="CONOS/0.jpg";
